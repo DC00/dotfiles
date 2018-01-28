@@ -1,8 +1,35 @@
+execute pathogen#infect()
 syntax enable
 
-set tabstop=4
-set shiftwidth=4
+"let g:solarized_termcolors=256
+"let g:solarized_bold=1
+"let g:solarized_italic=1
+"let g:solarized_underline=1
+"let g:solarized_contrast="high"
+"set background=dark
+"colorscheme solarized
+
+
+" Uncomment these to change vim colors
+set t_Co=256
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
+
+
+" filetype plugin indent on
+
+"Cool files 
+"au BufNewFile,BufRead *.cool setf cool 
+"autocmd BufNewFile,BufRead *.cl set syntax=cool
+
 set number    
 set showmatch
 set autoindent
 set hlsearch
+set expandtab
+
+" whitespace style conventions
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal shiftwidth=4 tabstop=4

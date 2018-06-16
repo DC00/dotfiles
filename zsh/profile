@@ -1,0 +1,29 @@
+MYSQL=/usr/local/mysql/bin
+RVM=$HOME/.rvm/bin
+PSQL=/Applications/Postgres.app/Contents/Versions/9.4/bin
+
+# Python 3 is not in /usr/bin
+PYTHONPATH=/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages
+
+# All Python2 stuff is in /usr/bin
+PYTHON2_PATH=/usr/bin/python
+export JAVA_HOME=$(/usr/libexec/java_home)
+export EDITOR='subl -w'
+export PYTHONPATH=$PYTHONPATH:$PATH
+export PYTHON2_PATH=$PYTHON2_PATH:$PATH
+export PATH=$PATH:/usr/local/bin:$RVM:$MYSQL:/opt/local/bin:/opt/local/sbin:$PSQL
+export GOPATH=$HOME/go
+
+# Ruby and RVM stuff
+[[ -s "HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PS1=export PS1="\u@\h [\w] $ "
+
+# Aliases
+alias ll="ls -las"
+
+
+# Setting PATH for Python 3.4
+# The orginal version is saved in .profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH

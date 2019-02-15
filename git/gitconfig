@@ -1,3 +1,10 @@
+[user]
+        name = dcoo
+        email = danieljohncoo@gmail.com
+[color]
+        ui = true
+[push]
+        default = simple
 [alias]
 	co = checkout
 	br = branch
@@ -5,3 +12,5 @@
 	st = status
 [user]
 	name = dcoo
+[core]
+        editor = /usr/bin/vim

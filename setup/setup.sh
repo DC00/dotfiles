@@ -15,3 +15,9 @@ ruby_version="2.5.1"
 # ruby
 # homebrew
 # ripgrep
+
+# mac specific
+
+# key repeat
+# defaults write NSGlobalDomain KeyRepeat -int 0
+

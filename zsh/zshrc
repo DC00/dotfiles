@@ -44,3 +44,4 @@ source $ZSH/oh-my-zsh.sh
 
 # Run 'alias' to see all aliases
 # Example: alias ci="commit"
+alias rgf='rg --files | rg'

@@ -5,11 +5,14 @@ osascript -e 'tell application "System Preferences" to quit'
 
 sudo -v
 
-# default directories
+# make and set default directories
+
+# need to make them first
 
 bin_dir="/usr/local/bin"
 code_dir="$HOME/code/"
 ruby_version="2.5.1"
+script_dir="~/.scripts"
 
 # rbenv
 # ruby

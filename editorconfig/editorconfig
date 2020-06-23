@@ -26,6 +26,6 @@ indent_style = space
 indent_size = 2
 
 # Matches the exact files either package.json or .travis.yml
-[{*.rb,package.json,.travis.yml}]
+[{*.jbuilder,*.haml,*.coffee,*.rb,package.json,.travis.yml,*.scss,*.rake}]
 indent_style = space
 indent_size = 2

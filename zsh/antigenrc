@@ -1,0 +1,8 @@
+antigen use oh-my-zsh
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle paulirish/git-open
+
+antigen theme geometry-zsh/geometry
+
+antigen apply

@@ -111,10 +111,40 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+workspace="/Users/$(whoami)/code"
+
 alias rgf='rg --files | rg'
 alias tp='tail -f ~/Library/Logs/puma-dev.log'
 alias s3p='bundle exec jekyll build && s3_website push'
 alias tf='tail -f log/development.log'
+alias tl='less log/development.log'
+
+alias go-iva="cd $workspace/idme-verification/"
+alias go-data="cd $workspace/idme-data/"
+alias go-idp="cd $workspace/idme-idp/"
+alias go-support="cd $workspace/idme-support/"
+alias go-referee="cd $workspace/idme-referee/"
+alias go-admin="cd $workspace/idme-admin/"
+alias go-shop="cd $workspace/idme-marketplace"
+alias be="bundle exec"
+alias pr="pry-remote"
+
+look() {
+	open https://idmeinc.atlassian.net/browse/AWE-$1
+}
+
+link(){
+	echo https://idmeinc.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD) | tr -d '\n' | pbcopy ; echo '喔'
+}
+
+gc() {
+  MESSAGE=$@
+  BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
+  git commit -m "$BRANCH: $MESSAGE"
+}
+
+# Allow [ or ] matching. Helpful for running rake tasks with arguments
+unsetopt nomatch
 
 # Load Antigen
 source ~/.antigen.zsh

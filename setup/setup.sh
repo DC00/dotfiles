@@ -20,11 +20,14 @@ script_dir="~/.scripts"
 # rbenv
 # ruby
 # homebrew
+ # brew install tree
+ # brew tap jakehilborn/jakehilborn && brew install displayplacer
+
 # ripgrep
 # cargo for rust
 
 # mac specific
 
 # key repeat
-# defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 0
 

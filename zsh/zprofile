@@ -1,0 +1,80 @@
+export PATH="~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# rbenv
+eval "$(rbenv init -)"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# nvm adds like 30 seconds of load time...
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
+
+workspace="/Users/$(whoami)/code"
+
+alias rgf="rg --files | rg"
+alias tp="tail -500f ~/Library/Logs/puma-dev.log"
+alias tf="tail -500f log/development.log"
+alias ll="ls -alr"
+alias ss="source ~/.zprofile && source ~/.zshrc"
+
+alias be="bundle exec"
+alias sd="bundle update --source idme-data"
+alias pdu='puma-dev -uninstall -d dev'
+alias ptu='puma-dev -uninstall -d test'
+alias pdi='puma-dev -install -d dev -timeout 8h'
+alias pti="puma-dev -install -d test -timeout 8h"
+alias bi="bundle lock --ad-platform ruby && bundle install && rbenv rehash && echo 'rehashed'"
+alias rr="rbenv rehash"
+
+# navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+alias ........="cd ../../../../../../.."
+alias .........="cd ../../../../../../../.."
+alias ..........="cd ../../../../../../../../.."
+alias ...........="cd ../../../../../../../../../.."
+alias ............="cd ../../../../../../../../../../.."
+alias .............="cd ../../../../../../../../../../../.."
+
+look() {
+	open https://idmeinc.atlassian.net/browse/$1
+}
+
+link(){
+	echo https://idmeinc.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD) | tr -d '\n' | pbcopy ; echo '喔'
+}
+
+gc() {
+  MESSAGE=$@
+  BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
+  git commit -m "$BRANCH: $MESSAGE"
+  # git commit -m "$MESSAGE"
+}
+
+# Allow [ or ] matching. Helpful for running rake tasks with arguments
+unsetopt nomatch
+
+# yubikey
+alias yk='ssh-add -e /usr/local/lib/libykcs11.dylib && ssh-add -s /usr/local/lib/libykcs11.dylib && pcsctest'
+alias ykr='ssh-add -e /usr/local/lib/libykcs11.dylib'
+alias yka='ssh-add -s /usr/local/lib/libykcs11.dylib && pcsctest'
+
+# ssh
+alias ks="killall ssh-agent"
+

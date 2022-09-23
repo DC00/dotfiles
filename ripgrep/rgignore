@@ -1,0 +1,8 @@
+CHANGELOG.md
+#*.css
+#*.scss
+*.svg
+*.md
+*.lock
+*.sql
+#*.js

@@ -1,0 +1,20 @@
+filetype plugin indent on
+syntax on
+
+colorscheme default
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+set clipboard=unnamed
+set number    
+set showmatch
+set ignorecase
+set smartcase
+set showcmd
+set autoindent
+set hlsearch
+set expandtab
+set ruler
+

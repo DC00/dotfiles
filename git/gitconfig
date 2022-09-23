@@ -21,3 +21,6 @@
   editor = /usr/bin/vim
 [branch]
 	autosetuprebase = always
+[init]
+	defaultBranch = main
+

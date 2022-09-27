@@ -67,6 +67,11 @@ gc() {
   # git commit -m "$MESSAGE"
 }
 
+go() {
+  BRANCH=$@
+  git open origin $BRANCH
+}
+
 # Allow [ or ] matching. Helpful for running rake tasks with arguments
 unsetopt nomatch
 

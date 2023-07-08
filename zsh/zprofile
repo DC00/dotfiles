@@ -79,6 +79,16 @@ go() {
   git open origin $BRANCH
 }
 
+look() {
+	open https://idmeinc.atlassian.net/browse/$1
+}
+
+serve() {
+  port="${1:-3000}"
+  ruby -run -e httpd . -p $port
+}
+
+
 # Allow [ or ] matching. Helpful for running rake tasks with arguments
 unsetopt nomatch
 

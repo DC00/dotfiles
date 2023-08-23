@@ -32,6 +32,8 @@ workspace="/Users/$(whoami)/code"
 
 alias rgf="rg --files | rg"
 alias tp="tail -500f ~/Library/Logs/puma-dev.log"
+# highlights keyword "action" in log files
+alias tj="tail -f log/development.json.log | awk '{gsub(/action/, \"\033[01;31m\033[43m&\033[0m\"); print}'"
 alias tf="tail -500f log/development.log"
 alias ll="ls -alr"
 alias ss="source ~/.zprofile && source ~/.zshrc"

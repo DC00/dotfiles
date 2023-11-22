@@ -90,6 +90,9 @@ serve() {
   ruby -run -e httpd . -p $port
 }
 
+servepython() {
+  python -m http.server
+}
 
 # Allow [ or ] matching. Helpful for running rake tasks with arguments
 unsetopt nomatch

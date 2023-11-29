@@ -105,3 +105,5 @@ alias yka='ssh-add -s /usr/local/lib/libykcs11.dylib && pcsctest'
 # ssh
 alias ks="killall ssh-agent"
 
+alias wmip="curl -s https://ifconfig.co"
+

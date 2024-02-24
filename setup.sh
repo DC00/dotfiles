@@ -22,7 +22,7 @@ cp ~/mycode/dotfiles/git/.gitconfig ~/.gitconfig
 echo "SETUP:copying git-open"
 cp ~/mycode/dotfiles/git/git-open ~/.scripts/git-open
 
-echo "SETUP:chmoding git-open
+echo "SETUP:chmoding git-open"
 chmod +x ~/.scripts/git-open
 
 echo "SETUP:copying rubygems config"
@@ -33,6 +33,9 @@ cp ~/mycode/dotfiles/vim/.vimrc ~/.vimrc
 
 echo "SETUP:copying tmux config"
 cp ~/mycode/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+
+echo "SETUP:copying rgignore"
+cp ~/mycode/dotfiles/ripgrep/rgignore ~/.rgignore
 
 echo "SETUP:installing xcode tools"
 xcode-select --install

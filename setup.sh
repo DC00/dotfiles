@@ -79,7 +79,7 @@ echo "SETUP:installing pyenv"
 brew install pyenv
 
 echo "SETUP:install python 3.10.6"
-pyenv install 3.10.6"
+pyenv install 3.10.6
 
 echo "SETUP:setting python version"
 pyenv global 3.10.6

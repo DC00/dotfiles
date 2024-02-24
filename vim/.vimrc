@@ -8,7 +8,7 @@ set softtabstop=2
 set shiftwidth=2
 
 set clipboard=unnamed
-set number    
+set number
 set showmatch
 set ignorecase
 set smartcase
@@ -17,4 +17,3 @@ set autoindent
 set hlsearch
 set expandtab
 set ruler
-

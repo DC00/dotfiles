@@ -10,20 +10,14 @@ mkdir -p ~/.scripts
 echo "SETUP:cloning dotfiles"
 git clone git@github.com:DC00/dotfiles.git ~/mycode
 
-echo "SETUP:backing up zprofile"
-cp ~/.zprofile ~/.zprofile.bak
-
-echo "SETUP:copying zprofile"
-cp ~/mycode/dotfiles/zsh/zprofile ~/.zprofile
-
 echo "SETUP:backing up zshrc"
 cp ~/.zshrc ~/.zshrc.bak
 
 echo "SETUP:copying zshrc"
-cp ~/mycode/dotfiles/zsh/zshrc ~/.zshrc
+cp ~/mycode/dotfiles/zsh/.zshrc ~/.zshrc
 
 echo "SETUP:copying gitconfig"
-cp ~/mycode/dotfiles/git/gitconfig ~/.gitconfig
+cp ~/mycode/dotfiles/git/.gitconfig ~/.gitconfig
 
 echo "SETUP:copying git-open"
 cp ~/mycode/dotfiles/git/git-open ~/.scripts/git-open
@@ -35,10 +29,10 @@ echo "SETUP:copying rubygems config"
 cp ~/mycode/dotfiles/rubygems/gemrc ~/.gemrc
 
 echo "SETUP:copying vim config"
-cp ~/mycode/dotfiles/vim/vimrc ~/.vimrc
+cp ~/mycode/dotfiles/vim/.vimrc ~/.vimrc
 
 echo "SETUP:copying tmux config"
-cp ~/mycode/dotfiles/tmux/tmux.conf ~/.tmux.conf
+cp ~/mycode/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 echo "SETUP:installing xcode tools"
 xcode-select --install
@@ -68,7 +62,7 @@ echo "SETUP:installing rbenv"
 brew install rbenv
 
 echo "SETUP:sourcing startup script"
-source ~/.zprofile
+source ~/.zshrc
 
 echo "SETUP:installing ruby 2.7.4"
 rbenv install 2.7.4
@@ -88,7 +82,7 @@ echo "SETUP:setting python version"
 pyenv global 3.10.6
 
 echo "SETUP:sourcing startup script"
-source ~/.zprofile && source ~/.zshrc
+source ~/.zshrc
 
 echo "SETUP:updating gems"
 gem update --system
@@ -103,7 +97,7 @@ rbenv global 2.7.4
 rbenv rehash
 
 echo "SETUP:installing postgres"
-brew install postgresql@14
+brew install postgresql@15
 
 echo "SETUP:installing redis"
 brew install redis
@@ -111,14 +105,8 @@ brew install redis
 echo "SETUP:starting services"
 brew services start --all
 
-echo "SETUP:installing nvm"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
 echo "SETUP:sourcing startup script"
-source ~/.zprofile
-
-echo "SETUP:installing nodejs"
-nvm install 14.17
+source ~/.zshrc
 
 echo "SETUP:installing tree"
 brew install tree
@@ -136,7 +124,6 @@ echo "SETUP:installing ripgrep"
 brew install ripgrep
 
 echo "SETUP:sourcing startup script"
-source ~/.zprofile
+source ~/.zshrc
 
 echo "done"
-
